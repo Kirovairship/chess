@@ -773,43 +773,9 @@ public class GameController implements GameListener {
         System.out.println("load finished");
         System.out.println(e);
         initChessboard();
-        /*for(Step oo:ee.sav){
-            String s=changshu.mapcell[oo.getTo().getRow()][oo.getTo().getCol()];
-            if(s=="Elephant")LOADMOVEElephant(oo.getFrom(),oo.getTo());
-            else if(s=="Cat")LOADMOVECat(oo.getFrom(),oo.getTo());
-            else if(s=="Dog")LOADMOVEDog(oo.getFrom(),oo.getTo());
-            else if(s=="Leopard")LOADMOVELeopard(oo.getFrom(),oo.getTo());
-            else if(s=="Lion")LOADMOVELion(oo.getFrom(),oo.getTo());
-            else if(s=="Rat")LOADMOVERat(oo.getFrom(),oo.getTo());
-            else if(s=="Tiger")LOADMOVETiger(oo.getFrom(),oo.getTo());
-            else if(s=="Wolf")LOADMOVEWolf(oo.getFrom(),oo.getTo());
-            else LOADMOVE(oo.getFrom(),oo.getTo());
-        }*/
     }
     public void slowload()
     {
-        /*save e = null;
-        try
-        {
-            FileInputStream fileIn = new FileInputStream("/sav.txt");
-            ObjectInputStream in = new ObjectInputStream(fileIn);
-            e = (save) in.readObject();
-            in.close();
-            fileIn.close();
-        }catch(IOException i)
-        {
-            i.printStackTrace();
-            return;
-        }catch(ClassNotFoundException c)
-        {
-            System.out.println("Employee class not found");
-            c.printStackTrace();
-            return;
-        }
-        System.out.println("load finished");
-        System.out.println(e);
-        initChessboard();*/
-        //for(Step oo:e.sav){
         if(e.sav.size()==0)return;
         Step oo=e.sav.getFirst();
         e.sav.removeFirst();
@@ -829,7 +795,6 @@ public class GameController implements GameListener {
             } catch (InterruptedException ex) {
                 throw new RuntimeException(ex);
             }
-        //}
     }
     public void quickload()
     {
