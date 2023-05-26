@@ -15,6 +15,10 @@ import chess.WolfChessComponent;
 import view.ChessGameFrame;
 import view.ChessboardComponent;
 
+import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
+import java.awt.*;
 import java.io.*;
 
 /**
@@ -200,10 +204,30 @@ public class GameController implements GameListener {
             else if(currentPlayer==PlayerColor.RED&&to.getRow()==8)win=1;
             else return;
             if(win==1){
+                JFrame blueWin = new JFrame("blue wins!");
+                JLabel text1 = new JLabel("Blue Wins!");
+                JButton button1 = new JButton("Blue Wins!");
+                blueWin.add(button1);
+                Border border = new LineBorder(Color.blue,20);
+                button1.setBorder(border);
+                button1.setSize(100,100);
+                blueWin.setVisible(true);
+                blueWin.setSize(250,250);
+                blueWin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 System.out.printf("Blue win!\n");
             }
             else{
                 System.out.printf("Red win!\n");
+                JFrame redWin = new JFrame("red wins!");
+                JLabel text2 = new JLabel("red Wins!");
+                JButton button2 = new JButton("Red Wins!");
+                redWin.add(button2);
+                Border border1 = new LineBorder(Color.red,20);
+                button2.setBorder(border1);
+                button2.setSize(100,100);
+                redWin.setVisible(true);
+                redWin.setSize(500,500);
+                redWin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             }
             // 赢了的面板
         }
